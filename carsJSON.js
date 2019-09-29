@@ -1,4 +1,4 @@
-const cars = [
+const journal = [
     {
         id: 1,
         year: 2008,
@@ -25,4 +25,4 @@ const cars = [
     },
 ]
 
-module.exports = cars;
+module.exports = journal;
