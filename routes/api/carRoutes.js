@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const uuid = require("uuid/v4")
 const cars = require("../../carsJSON")
+let car;
 
 router.get("/", (req, res) => {
     res.json(cars)
@@ -14,8 +15,12 @@ router.get("/:year/:brand/:model", (req, res) => {
         let foundCars = cars.filter(car => car.brand.toUpperCase() === req.params.brand.toUpperCase());
         let brandAndYear = foundCars.filter(car => car.year === parseInt(req.params.year))
         let singleCarArr = brandAndYear.filter(car => car.model.replace(/\s+/g, '') === req.params.model.replace(/\s+/g, ''))
-        let car = singleCarArr[0]
-        res.redirect(`/${car.year}/${car.brand.toLowerCase()}/${car.model.toLowerCase()}`)
+        car = singleCarArr[0]
+        res.render("single", {
+            title: car.brand,
+            car
+        })
+        
     } else {
         res.send("<h1>Please try another search.</h1>")
     }
@@ -37,7 +42,6 @@ router.post("/", (req, res) => {
     newCar.year = parseInt(newCar.year)
     newCar.id = uuid();
     cars.push(newCar)
-    console.log(cars)
     res.redirect("/")
 })
 

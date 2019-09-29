@@ -26,7 +26,7 @@ app.get("/:brand", (req, res) => {
 
 app.get("/:year/:brand/:model", (req, res) => {
     res.render("single", {
-        title: "Selected Car"
+        title: res.brand
     })
 })
 
