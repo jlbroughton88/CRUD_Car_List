@@ -1,21 +1,23 @@
-<h1>Cars</h1>
-<ul>
-    {{#each cars}}
-    <li>
-        {{this.year}} {{this.brand}} {{this.model}}
-        <form action="/api/cars/delete/{{this.id}}?_method=DELETE" method="POST">
-            <input type="submit" value="Delete">
-        </form>
-        <form action="/api/cars/{{this.brand}}" method="GET">
-            <input type="submit" placeholder="View" value="View">
-        </form>
+<div class="container">
+    <ul class="carList">
+        {{#each cars}}
+        <li class="carListItem">
+            {{this.year}} {{this.brand}} {{this.model}}
+            <form class="deleteForm" action="/api/cars/delete/{{this.id}}?_method=DELETE" method="POST">
+                <input class="deleteBtn" type="submit" value="X">
+            </form>
+            <form class="viewForm" action="/api/cars/{{this.year}}/{{this.brand}}/{{this.model}}" method="GET">
+                <input class="viewBtn" type="submit" placeholder="View" value="View">
+            </form>
 
-    </li> 
-    {{/each}}
-</ul>
-<form action="/api/cars" method="POST">
-    <input name="year" placeholder="year" type="text">
-    <input name="brand" placeholder="brand" type="text">
-    <input name="model" placeholder="model" type="text">
-    <input type="submit">
-</form>
+        </li>
+        {{/each}}
+    </ul>
+    <form class="newCarForm" action="/api/cars" method="POST">
+        <input class="newCarInput" name="year" placeholder="Year" type="text">
+        <input class="newCarInput" name="brand" placeholder="Brand" type="text">
+        <input class="newCarInput" name="model" placeholder="Model" type="text">
+        <input class="submitBtn" type="submit">
+    </form>
+
+</div>

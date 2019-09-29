@@ -7,6 +7,20 @@ router.get("/", (req, res) => {
     res.json(cars)
 })
 
+router.get("/:year/:brand/:model", (req, res) => {
+    let found = cars.some(car => car.brand.toUpperCase() === req.params.brand.toUpperCase());
+    
+    if(found) {
+        let foundCars = cars.filter(car => car.brand.toUpperCase() === req.params.brand.toUpperCase());
+        let brandAndYear = foundCars.filter(car => car.year === parseInt(req.params.year))
+        let singleCarArr = brandAndYear.filter(car => car.model.replace(/\s+/g, '') === req.params.model.replace(/\s+/g, ''))
+        let car = singleCarArr[0]
+        res.redirect(`/${car.year}/${car.brand.toLowerCase()}/${car.model.toLowerCase()}`)
+    } else {
+        res.send("<h1>Please try another search.</h1>")
+    }
+})
+
 router.get("/:brand", (req, res) => {
     let found = cars.some(car => car.brand.toUpperCase() === req.params.brand.toUpperCase());
     

@@ -19,9 +19,14 @@ app.get("/", (req, res) => {
 })
 
 app.get("/:brand", (req, res) => {
+    res.render("brand", {
+        title: "Brand"
+    })
+})
+
+app.get("/:year/:brand/:model", (req, res) => {
     res.render("single", {
         title: "Selected Car"
-        
     })
 })
 
