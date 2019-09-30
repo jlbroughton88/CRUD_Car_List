@@ -19,31 +19,28 @@ db.once("open", function() {
     console.log("Mongodb Connected!")
 })
 
-
-
-
+app.use(express.static(path.join(__dirname, "client/build")))
 app.use(methodOverride("_method"))
 app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
 
 
 
-app.get("/", (req, res) => {
-
-    fetch("http://localhost:5002/api")
+app.get("/all", (req, res) => {
+        fetch("http://localhost:5002/api")
     .then(res => res.json())
-    .then(cars => res.render("home", {
-        title: "The Greatest Cars",
+    .then(cars => res.render("all", {
+        title: "All Cars",
         cars: cars
     }))
 })
 
+app.get("/", (req, res) => {
+res.render("home", {
+        title: "The Greatest Cars"
+    })
+})
 
-// app.get("/:year/:brand/:model", (req, res) => {
-//     res.render("single", {
-//         title: res.brand
-//     })
-// })
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

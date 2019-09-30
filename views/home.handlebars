@@ -1,17 +1,9 @@
+<nav class="nav">
+    <a href="/"><span class="homeNav">Home</span></a>
+</nav>
 <div class="container">
-    <ul class="carList">
-        {{#each cars}}
-        <li class="carListItem">
-            {{this.year}} {{this.brand}} {{this.model}}
-            <form class="deleteForm" action="/delete/{{this._id}}/?_method=DELETE" method="POST">
-                <input class="deleteBtn" type="submit" value="X">
-            </form>
-            <form class="viewForm" action="/single/{{this._id}}" method="GET">
-                <input class="viewBtn" type="submit" placeholder="View" value="View">
-            </form>
-        </li>
-        {{/each}}
-    </ul>
+    <h1 class="homeHead">{{title}}</h1>
+    <a href="/all" class="viewAllBtn"><div>View All!</div></a>
     <form id="form" name="form" class="newCarForm" action="/add" method="POST">
         <div>
         </div>
@@ -27,7 +19,7 @@
         </div>
     </form>
     <div class="submitBtnDiv">
-        <input form="form" class="submitBtn" type="submit">
+        <input form="form" id="submitBtn" class="submitBtn" type="submit">
     </div>
     
 </div>

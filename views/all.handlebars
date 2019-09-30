@@ -1,0 +1,18 @@
+<nav class="nav">
+    <a href="/"><span class="homeNav">Home</span></a>
+</nav>
+<div class="allContainer">
+    <ul class="carList">
+        {{#each cars}}
+        <li class="carListItem">
+            {{this.year}} {{this.brand}} {{this.model}}
+            <form class="deleteForm" action="/delete/{{this._id}}/?_method=DELETE" method="POST">
+                <input class="deleteBtn" type="submit" value="X">
+            </form>
+            <form class="viewForm" action="/single/{{this._id}}" method="GET">
+                <input class="viewBtn" type="submit" placeholder="View" value="View">
+            </form>
+        </li>
+        {{/each}}
+    </ul>
+</div>
