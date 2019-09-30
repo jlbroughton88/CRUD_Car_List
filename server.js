@@ -1,10 +1,10 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const bodyParser = require("body-parser");
+const fetch = require("node-fetch")
 const methodOverride = require("method-override");
 const path = require("path");
 const app = express();
-const cars = require("./carsJSON");
 require("dotenv").config();
 const MONGO_URI = process.env.MONGO_URI;
 
@@ -29,27 +29,25 @@ app.set("view engine", "handlebars");
 
 
 app.get("/", (req, res) => {
-    res.render("home", {
-        title: "Car Wiki",
+
+    fetch("http://localhost:5002/api")
+    .then(res => res.json())
+    .then(cars => res.render("home", {
+        title: "The Greatest Cars",
         cars: cars
-    })
+    }))
 })
 
-app.get("/:brand", (req, res) => {
-    res.render("brand", {
-        title: "Brand"
-    })
-})
 
-app.get("/:year/:brand/:model", (req, res) => {
-    res.render("single", {
-        title: res.brand
-    })
-})
+// app.get("/:year/:brand/:model", (req, res) => {
+//     res.render("single", {
+//         title: res.brand
+//     })
+// })
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/api/cars", require("./routes/api/carRoutes"));
+app.use("/", require("./routes/api/carRoutes"));
 app.use(express.static(path.join(__dirname, "/public")));
 
 
