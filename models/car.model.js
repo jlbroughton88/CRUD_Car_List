@@ -5,8 +5,9 @@ let CarSchema = new Schema({
     year: {type: Number},
     brand: { type: String, required: true },
     model: { type: String, required: true },
-    horsePower: { type: Number },
-    torque: { type: Number }
+    hp: { type: Number, required: true },
+    tq: { type: Number, required: true },
+    msrp: { type: Number, required: true }
 })
 
 module.exports = mongoose.model("Car", CarSchema);

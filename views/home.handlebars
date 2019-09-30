@@ -3,21 +3,31 @@
         {{#each cars}}
         <li class="carListItem">
             {{this.year}} {{this.brand}} {{this.model}}
-            <form class="deleteForm" action="/api/cars/delete/{{this.id}}?_method=DELETE" method="POST">
+            <form class="deleteForm" action="/delete/{{this._id}}/?_method=DELETE" method="POST">
                 <input class="deleteBtn" type="submit" value="X">
             </form>
-            <form class="viewForm" action="/api/cars/{{this.year}}/{{this.brand}}/{{this.model}}" method="GET">
+            <form class="viewForm" action="/single/{{this._id}}" method="GET">
                 <input class="viewBtn" type="submit" placeholder="View" value="View">
             </form>
-
         </li>
         {{/each}}
     </ul>
-    <form class="newCarForm" action="/api/cars" method="POST">
-        <input class="newCarInput" name="year" placeholder="Year" type="text" autocomplete="off">
-        <input class="newCarInput" name="brand" placeholder="Brand" type="text" autocomplete="off">
-        <input class="newCarInput" name="model" placeholder="Model" type="text" autocomplete="off">
-        <input class="submitBtn" type="submit">
+    <form id="form" name="form" class="newCarForm" action="/add" method="POST">
+        <div>
+        </div>
+        <div class="yearBrandModel">
+            <input class="newCarInput" name="year" placeholder="Year" type="text" autocomplete="off">
+            <input class="newCarInput" name="brand" placeholder="Brand" type="text" autocomplete="off">
+            <input class="newCarInput" name="model" placeholder="Model" type="text" autocomplete="off">
+        </div>
+        <div class="hpTqMsrp">
+            <input class="additionalInput" name="hp" placeholder="HP" type="text" autocomplete="off">
+            <input class="additionalInput" name="tq" placeholder="Lbs*tq" type="text" autocomplete="off">
+            <input class="additionalInput" name="msrp" placeholder="MSRP" type="text" autocomplete="off">
+        </div>
     </form>
-
+    <div class="submitBtnDiv">
+        <input form="form" class="submitBtn" type="submit">
+    </div>
+    
 </div>

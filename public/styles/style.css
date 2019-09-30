@@ -36,6 +36,8 @@ html, body{
     justify-content: space-evenly;
     border: 1px solid #e4e4e4;
     padding: 5%;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
     color: #e4e4e4;
     font-size: 1.1rem;
 }
@@ -44,25 +46,65 @@ html, body{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 250px;
-    width: 300px;
+    height: 200px;
+    width: 450px;
    
 }
+
 .newCarInput{
-    width: 100%;
+    width: 25%;
     padding: 3%;
-    font-size: 1.1rem;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    font-size: 1.05rem;
     outline: none;
     align-self: center;
 }
 
-.submitBtn{
+.additionalInput{
+    width: 25%;
+    padding: 3%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    font-size: 1.05rem;
+    outline: none;
     align-self: center;
-    width: 50%;
-    height: 40px;
-    padding: 40px;
-    font-size: 1.2rem;
+}
+
+.yearBrandModel{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 2%;
+    font-size: 1.0rem;
+    outline: none;
+    align-self: center;
+}
+
+.hpTqMsrp{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 2%;
+    font-size: 1.0rem;
+    outline: none;
+    align-self: center;
+}
+
+.submitBtnDiv{
+    height: 50px;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submitBtn{
+    font-size: 1.3rem;
     color: #333;
+    height: 100%;
+    width: 100px;
+    padding: 3%;
 }
 
 .deleteForm{}
@@ -84,5 +126,17 @@ html, body{
 
 /* SINGLE */
 .singleHead{
+    color: #e4e4e4;
+}
+
+.hp{
+    color: #e4e4e4;
+}
+
+.tq{
+    color: #e4e4e4;
+}
+
+.msrp{
     color: #e4e4e4;
 }

@@ -11,16 +11,21 @@ exports.car_get_all = (req, res) => {
 
 exports.car_get_one = (req, res) => {
     db.model("Car").findOne({ _id:req.params.id }, (error, result) => {
-        if(error) { console.log(error) }
-        else { res.send(result) }
+        if(error) { consoles.log(error) }
+        else { res.render("single", {
+            car: result
+        })}
     })
 }
 
 exports.car_add = (req, res) => {
     let car = new Car({
         year: req.body.year,
-        brand: req.body.year,
-        model: req.body.model
+        brand: req.body.brand,
+        model: req.body.model,
+        hp: req.body.hp,
+        tq: req.body.tq,
+        msrp: req.body.msrp
     })
 
     car.save((err) => {
