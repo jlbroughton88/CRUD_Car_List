@@ -15,13 +15,13 @@ mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
-}).catch((e) => { console.log(e) });
+}).then(() => { console.log("connection promise")}).catch((e) => { console.log(e) });
 
 // DONT FORGET TO RUN HEROKU:CONFIG WITH THE URI
 // Run heroku restart after
 let db = mongoose.connection;
 db.on("error", console.error.bind(console, "HOMIE U CRAZY"));
-db.once("open", function () {
+db.once("open", () => {
     console.log("Mongodb Connected!")
 })
 
