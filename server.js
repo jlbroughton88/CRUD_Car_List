@@ -19,8 +19,8 @@ db.once("open", function () {
     console.log("Mongodb Connected!")
 })
 
-// app.use(express.static(path.join(__dirname, "public")))
-app.set("views",path.join(__dirname, "views"))
+app.use(express.static(path.join(__dirname, "public")))
+// app.set("views",path.join(__dirname, "public/home"))
 app.use(methodOverride("_method"))
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
@@ -29,14 +29,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/", require("./routes/api/carRoutes"));
 
 app.get("/", (req, res) => {
-    res.render("home", {
-        title: "The Greatest Cars"
-    })
+    res.send("Hello")
+    // res.render("home", {
+    //     title: "The Greatest Cars"
+    // })
 })
 
 
 app.get("/all", (req, res) => {
-    fetch("https://crud-car-list.herokuapp.com/api")
+    fetch("localhost:5002/api")
         .then(res => res.json())
         .then(cars => res.render("all", {
             title: "All Cars",
