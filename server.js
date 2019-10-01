@@ -42,7 +42,7 @@ app.get("/test", (req, res) => {
 
 
 app.get("/all", (req, res) => {
-    fetch("http://localhost:5002/api/all")
+    fetch("https://crud-car-list.herokuapp.com/api/all")
         .then(res => res.json())
         .then(cars => res.render("all", {
             title: "All Cars",
