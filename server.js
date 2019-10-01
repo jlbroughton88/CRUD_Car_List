@@ -29,15 +29,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/", require("./routes/api/carRoutes"));
 
 app.get("/", (req, res) => {
-    res.send("Hello")
-    // res.render("home", {
-    //     title: "The Greatest Cars"
-    // })
+    res.render("home", {
+        title: "The Greatest Cars"
+    })
 })
 
 
 app.get("/all", (req, res) => {
-    fetch("localhost:5002/api")
+    fetch("http://localhost:5002/api/all")
         .then(res => res.json())
         .then(cars => res.render("all", {
             title: "All Cars",
