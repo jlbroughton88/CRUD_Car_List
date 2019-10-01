@@ -31,14 +31,14 @@ app.get("/", (req, res) => {
     })
 })
 
-app.get("/all", (req, res) => {
-    fetch("http://localhost:5002/api")
-        .then(res => res.json())
-        .then(cars => res.render("all", {
-            title: "All Cars",
-            cars: cars
-        }))
-})
+// app.get("/all", (req, res) => {
+//     fetch("http://localhost:5002/api")
+//         .then(res => res.json())
+//         .then(cars => res.render("all", {
+//             title: "All Cars",
+//             cars: cars
+//         }))
+// })
 
 
 app.use(bodyParser.json());
