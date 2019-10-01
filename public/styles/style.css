@@ -171,8 +171,6 @@ a{
     .newCarForm{ flex-direction: column; height: 300px; margin-top: 1.5%;}
     .yearBrandModel{ width: 70%; padding: 0; height: 50%; justify-content: space-around;}
     .hpTqMsrp{ width: 70%; padding: 0; height: 50%; justify-content: space-around;}
-    .newCarInput{ }
-    .additionalInput{  }
 }
 
 .submitBtnDiv{
@@ -201,7 +199,6 @@ a{
 }
 
 
-.deleteForm{}
 
 .deleteBtn{
     background-color: red;
@@ -210,7 +207,6 @@ a{
     font-size: 1rem;
 }
 
-.viewForm{}
 
 .viewBtn{
     border: none;

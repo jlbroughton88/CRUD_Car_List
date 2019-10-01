@@ -19,11 +19,13 @@ db.once("open", function () {
     console.log("Mongodb Connected!")
 })
 
-app.use(express.static(path.join(__dirname, "views/layouts")))
+app.use(express.static(path.join(__dirname, "public")))
 app.use(methodOverride("_method"))
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
-
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use("/", require("./routes/api/carRoutes"));
 
 app.get("/", (req, res) => {
     res.render("home", {
@@ -31,20 +33,18 @@ app.get("/", (req, res) => {
     })
 })
 
-// app.get("/all", (req, res) => {
-//     fetch("http://localhost:5002/api")
-//         .then(res => res.json())
-//         .then(cars => res.render("all", {
-//             title: "All Cars",
-//             cars: cars
-//         }))
-// })
+
+app.get("/all", (req, res) => {
+    fetch("http://localhost:5002/api")
+        .then(res => res.json())
+        .then(cars => res.render("all", {
+            title: "All Cars",
+            cars: cars
+        }))
+})
 
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use("/", require("./routes/api/carRoutes"));
-app.use(express.static(path.join(__dirname, "/public/views")));
+
 
 
 app.listen(process.env.PORT || 5002, () => {
