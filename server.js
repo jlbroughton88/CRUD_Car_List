@@ -7,6 +7,7 @@ const path = require("path");
 const app = express();
 require("dotenv").config();
 const MONGO_URI = process.env.MONGO_URI;
+console.log(MONGO_URI)
 
 const mongoose = require("mongoose")
 mongoose.connect(MONGO_URI, {
@@ -19,7 +20,7 @@ db.once("open", function () {
     console.log("Mongodb Connected!")
 })
 
-app.use(express.static(__dirname, "public"))
+app.use(express.static(path.join(__dirname, "public")))
 // app.set("views",path.join(__dirname, "public/home"))
 app.use(methodOverride("_method"))
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
