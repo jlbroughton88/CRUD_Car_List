@@ -44,7 +44,7 @@ app.get("/all", (req, res) => {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/", require("./routes/api/carRoutes"));
-app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.static(path.join(__dirname, "/public/views")));
 
 
 app.listen(process.env.PORT || 5002, () => {
