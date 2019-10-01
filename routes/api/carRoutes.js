@@ -7,6 +7,7 @@ router.get("/brand/:brand", car_controller.car_get_brand);
 router.get("/single/:id", car_controller.car_get_one);
 router.post("/add", car_controller.car_add);
 router.delete("/delete/:id", car_controller.car_delete);
+router.get("/test", car_controller.test)
 
 // router.get("/", (req, res) => {
 //     res.json(cars)

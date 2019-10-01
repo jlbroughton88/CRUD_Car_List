@@ -36,6 +36,10 @@ app.get("/", (req, res) => {
     })
 })
 
+app.get("/test", (req, res) => {
+    res.send("Hello from test")
+})
+
 
 app.get("/all", (req, res) => {
     fetch("http://localhost:5002/api/all")
