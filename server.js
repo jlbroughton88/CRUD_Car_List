@@ -45,10 +45,6 @@ app.get("/all", (req, res) => {
         }))
 })
 
-
-
-
-
 app.listen(process.env.PORT || 5002, () => {
     console.log("Server listening on port 5002")
 })
