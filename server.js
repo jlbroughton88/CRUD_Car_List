@@ -15,7 +15,7 @@ mongoose.connect(MONGO_URI, {
 })
 let db = mongoose.connection;
 db.on("error", console.error.bind(console, "Connection error: "));
-db.once("open", function() {
+db.once("open", function () {
     console.log("Mongodb Connected!")
 })
 
@@ -25,20 +25,19 @@ app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
 
 
-
-app.get("/all", (req, res) => {
-        fetch("http://localhost:5002/api")
-    .then(res => res.json())
-    .then(cars => res.render("all", {
-        title: "All Cars",
-        cars: cars
-    }))
-})
-
 app.get("/", (req, res) => {
-res.render("home", {
+    res.render("home", {
         title: "The Greatest Cars"
     })
+})
+
+app.get("/all", (req, res) => {
+    fetch("http://localhost:5002/api")
+        .then(res => res.json())
+        .then(cars => res.render("all", {
+            title: "All Cars",
+            cars: cars
+        }))
 })
 
 

@@ -17,15 +17,6 @@ html, body{
     
 }
 
-.allContainer{
-    height: 90%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 
 .nav{
     display: flex;
@@ -34,13 +25,36 @@ html, body{
     height: 40px;
     color: #e4e4e4;
     background-color: white;
-    padding-left: 5%;
+}
+
+.homeNavDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+}
+
+.navLinks{
+    display: flex;
+    width: 80%;
+    height: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 5%;
 }
 
 .homeNav{
     font-size: 1.3rem;
     color: #333;
 }
+
+.brandNav{
+    align-self: flex-end;
+    font-size: 1.3rem;
+    color: #333;
+}
+
 
 a{
     text-decoration: none;
@@ -163,7 +177,7 @@ a{
 
 .submitBtnDiv{
     height: 70px;
-    width: 30%;
+    width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -173,8 +187,17 @@ a{
     font-size: 1.1rem;
     color: #333;
     height: 40px !important;
-    width: 100%;
+    width: 80%;
     padding: 3%;
+    transition: all .15s ease-out;
+    outline: none;
+}
+
+.submitBtn:hover{
+    background-color: #333;
+    border: 1px #e4e4e4 solid;
+    color: #e4e4e4;
+    cursor: pointer;
 }
 
 

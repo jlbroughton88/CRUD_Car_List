@@ -11,12 +11,24 @@ exports.car_get_all = (req, res) => {
 
 exports.car_get_one = (req, res) => {
     db.model("Car").findOne({ _id:req.params.id }, (error, result) => {
-        if(error) { consoles.log(error) }
+        if(error) { console.log(error) }
         else { res.render("single", {
             car: result
         })}
     })
 }
+
+exports.car_get_brand = (req, res) => {
+    db.model("Car").find({ brand: req.params.brand }, (error, result) => {
+        if(error) { 
+            console.log(error) 
+        } else{ res.render("brand", {
+            title: "Brand",
+            cars: result
+        }) }
+    })
+}
+
 
 exports.car_add = (req, res) => {
     let car = new Car({
@@ -35,6 +47,7 @@ exports.car_add = (req, res) => {
     });
     res.redirect("/")
 }
+
 
 exports.car_delete = (req, res) => {
     db.model("Car").deleteOne({ _id: req.params.id }, (error, result) => {
