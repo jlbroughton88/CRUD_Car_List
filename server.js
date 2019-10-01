@@ -12,9 +12,10 @@ const mongoose = require("mongoose")
 mongoose.connect(MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
-})
+}).catch((e) => { console.log(e) });
+
 let db = mongoose.connection;
-db.on("error", console.error.bind(console, "Connection error: "));
+db.on("error", console.error.bind(console, "HOMIE U CRAZY"));
 db.once("open", function () {
     console.log("Mongodb Connected!")
 })
