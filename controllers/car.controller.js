@@ -4,7 +4,7 @@ const db = mongoose.connection;
 
 exports.car_get_all = (req, res) => {
     db.model("Car").find({}, (error, result) => {
-        if(error) { console.log(error) }
+        if(error) { res.send(error) }
         else { res.send(result) }
     })
 }
