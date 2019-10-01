@@ -21,7 +21,7 @@ db.once("open", function () {
 
 app.use(express.static(path.join(__dirname, "views")))
 app.use(methodOverride("_method"))
-app.engine("handlebars", exphbs());
+app.engine("handlebars", exphbs({defaultLayout: "home"}));
 app.set("view engine", "handlebars");
 
 
