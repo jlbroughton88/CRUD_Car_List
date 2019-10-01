@@ -6,10 +6,10 @@ const methodOverride = require("method-override");
 const path = require("path");
 const app = express();
 require("dotenv").config();
-const MONGO_URI = process.env.MONGO_URI;
+// const MONGO_URI = process.env.MONGO_URI;
 
 const mongoose = require("mongoose")
-mongoose.connect(MONGO_URI, {
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
