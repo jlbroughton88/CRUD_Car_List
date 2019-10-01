@@ -9,6 +9,7 @@ const app = express();
 require("dotenv").config();
 // const MONGO_URI = process.env.MONGO_URI;
 
+console.log("test")
 
 mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
