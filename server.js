@@ -7,7 +7,6 @@ const path = require("path");
 const app = express();
 require("dotenv").config();
 const MONGO_URI = process.env.MONGO_URI;
-console.log(MONGO_URI)
 
 const mongoose = require("mongoose")
 mongoose.connect(MONGO_URI, {
