@@ -16,6 +16,7 @@ mongoose.connect(process.env.MONGODB_URI, {
     useCreateIndex: true
 }).catch((e) => { console.log(e) });
 
+// DONT FORGET TO RUN HEROKU:CONFIG WITH THE URI
 let db = mongoose.connection;
 db.on("error", console.error.bind(console, "HOMIE U CRAZY"));
 db.once("open", function () {
@@ -42,7 +43,7 @@ app.get("/test", (req, res) => {
 
 
 app.get("/all", (req, res) => {
-    fetch("https://crud-car-list.herokuapp.com/api/all")
+    fetch("http://localhost:5002/api/all")
         .then(res => res.json())
         .then(cars => res.render("all", {
             title: "All Cars",
