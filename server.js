@@ -19,7 +19,7 @@ db.once("open", function () {
     console.log("Mongodb Connected!")
 })
 
-app.use(express.static(path.join(__dirname, "views/home.handlebars")))
+app.use(express.static(path.join(__dirname, "views")))
 app.use(methodOverride("_method"))
 app.engine("handlebars", exphbs());
 app.set("view engine", "handlebars");
