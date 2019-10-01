@@ -4,12 +4,13 @@ const bodyParser = require("body-parser");
 const fetch = require("node-fetch")
 const methodOverride = require("method-override");
 const path = require("path");
+const mongoose = require("mongoose")
 const app = express();
 require("dotenv").config();
 // const MONGO_URI = process.env.MONGO_URI;
 
-const mongoose = require("mongoose")
-mongoose.connect(process.env.MONGO_URI, {
+
+mongoose.connect(process.env.MONGODB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
