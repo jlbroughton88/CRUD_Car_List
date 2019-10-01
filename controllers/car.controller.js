@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const db = mongoose.connection;
 
 exports.car_get_all = (req, res) => {
-    db.model("Car").find({}, (error, result) => {
+    db.model("Car").find({brand:"Bugatti"}, (error, result) => {
         if(error) { res.send(error) }
         else { res.send(result) }
     })
