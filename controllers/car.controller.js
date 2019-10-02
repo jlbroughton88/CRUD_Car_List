@@ -54,7 +54,7 @@ exports.car_delete = (req, res) => {
     db.model("Car").deleteOne({ _id: req.params.id }, (error, result) => {
         if(result) {
             console.log("Car deleted successfully.")
-            res.redirect("/")
+            res.redirect("/all")
         } else { console.log("Please try another vehicle ID.") }
     });
 }

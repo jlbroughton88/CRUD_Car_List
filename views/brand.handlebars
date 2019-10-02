@@ -7,12 +7,14 @@
     <ul class="carList">
         {{#each cars}}
         <li class="carListItem">{{this.year}} {{this.brand}} {{this.model}}
-                        <form class="deleteForm" action="/api/delete/{{this._id}}/?_method=DELETE" method="POST">
-                <input class="deleteBtn" type="submit" value="X">
-            </form>
-            <form class="viewForm" action="/api/single/{{this._id}}" method="GET">
-                <input class="viewBtn" type="submit" placeholder="View" value="View">
-            </form>
+            <div class="buttonsDiv">
+                <form class="deleteForm" action="/api/delete/{{this._id}}/?_method=DELETE" method="POST">
+                    <input class="deleteBtn" type="submit" value="X">
+                </form>
+                <form class="viewForm" action="/api/single/{{this._id}}" method="GET">
+                    <input class="viewBtn" type="submit" placeholder="View" value="View">
+                </form>
+            </div>
         </li>
         {{/each}}
     </ul>

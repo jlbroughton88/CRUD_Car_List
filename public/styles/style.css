@@ -23,6 +23,19 @@ html, body{
     
 }
 
+hr{
+    width: 70%;
+    margin: 0;
+    margin-bottom: 25px;
+    height: 1px;
+    background-color: white;
+    border-color: purple;
+    max-width: 450px;
+}
+
+input{
+    -webkit-appearance: none;
+}
 
 .nav{
     display: flex;
@@ -30,7 +43,8 @@ html, body{
     width: 100%;
     height: 40px;
     color: #e4e4e4;
-    background-color: white;
+    background-color: purple;
+    border-bottom: #e4e4e4 solid 2px;
 }
 
 .homeNavDiv{
@@ -52,13 +66,13 @@ html, body{
 
 .homeNav{
     font-size: 1.3rem;
-    color: #333;
+    color: #e4e4e4;
 }
 
 .brandNav{
     align-self: flex-end;
     font-size: 1.3rem;
-    color: #333;
+    color: #e4e4e4;
 }
 
 
@@ -81,6 +95,7 @@ a{
     justify-content: center;
     align-items: center;
     width: 450px;
+    margin-top: 7px;
     margin-bottom: 40px;
     text-align: center;
 }
@@ -116,7 +131,7 @@ a{
     height: 40px;;
     width: 100px;
     margin-bottom: 20px;
-    transition: all 0.15s ease-out;
+    transition: all 0.15s ease-in-out;
 }
 
 .viewAllBtn:hover{
@@ -126,11 +141,13 @@ a{
 }
 
 .carList{
-    width: 350px;
+    width: 400px;
     max-height: 400px;
     overflow: scroll;
     padding: 0;
 }
+
+
 
 .carListItem{
     margin: 5%;
@@ -139,12 +156,26 @@ a{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: center;
     border: 1px solid #e4e4e4;
     padding: 5%;
     padding-top: 2.5%;
     padding-bottom: 2.5%;
     color: #e4e4e4;
     font-size: 1.1rem;
+}
+
+.buttonsDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100px;
+}
+
+@media(max-width: 550px) {
+    .carList{ width: 350px; }
+    .carListItem{ flex-direction: column; }
+    .buttonsDiv{ flex-direction: row; margin-top: 5px;}
 }
 
 .newCarForm{
@@ -166,9 +197,12 @@ a{
     outline: none;
     align-self: center;
     border-radius: 2px;
+    text-align: center;
 }
 
 .additionalInput{
+    display: table;
+    vertical-align: center;
     width: 23%;
     padding: 3%;
     padding-top: 1.5%;
@@ -177,6 +211,7 @@ a{
     outline: none;
     align-self: center;
     border-radius: 2px;
+    text-align: center;
 }
 
 .yearBrandModel{
@@ -255,13 +290,14 @@ a{
     font-size: 1.1rem;
     background-color: #e4e4e4;
     color: #333;
-    height: 40px !important;
+    height: 40px;
     width: 80%;
     padding: 3%;
     transition: all .15s ease-out;
     outline: none;
     border-radius: 2px;
     border: 2px solid purple;
+    font-family: "Museo Sans";
 }
 
 .submitBtn:hover{
@@ -289,6 +325,7 @@ a{
 
 
 .viewBtn{
+    background-color: #e4e4e4;
     border: none;
     outline: none;
     font-size: 1rem;
@@ -296,17 +333,36 @@ a{
 
 /* SINGLE */
 .singleHead{
+    font-size: 2.0rem;
+    margin: 0;
+    margin-bottom: 10px;
     color: #e4e4e4;
+    font-weight: bolder;
 }
 
 .hp{
+    margin: 0;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
     color: #e4e4e4;
 }
 
 .tq{
+    font-size: 1.5rem;
+    margin: 0;
+    margin-bottom: 25px;
     color: #e4e4e4;
 }
 
 .msrp{
+    margin: 0;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
     color: #e4e4e4;
+}
+
+@media(max-width: 550px){
+    .singleHead{
+        font-size:1.5rem;
+    }
 }
