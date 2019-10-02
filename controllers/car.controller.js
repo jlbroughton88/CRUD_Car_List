@@ -46,7 +46,7 @@ exports.car_add = (req, res) => {
             console.log("Please try again with correct parameters.")
         } else { console.log( "Car added successfully!" )}
     });
-    res.redirect("/")
+    setTimeout(() => { res.redirect("/")}, 500)
 }
 
 

@@ -258,6 +258,13 @@ a{
     cursor: pointer;
 }
 
+#clickViewPrompt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
 
 
 .deleteBtn{
