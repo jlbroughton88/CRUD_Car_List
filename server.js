@@ -19,6 +19,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 
 // DONT FORGET TO RUN HEROKU:CONFIG WITH THE URI
 // Run heroku restart after
+// Make sure to whitelist IP on Mongodb Atlas
 let db = mongoose.connection;
 db.on("error", console.error.bind(console, "HOMIE U CRAZY"));
 db.once("open", () => {

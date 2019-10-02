@@ -9,10 +9,6 @@ exports.car_get_all = (req, res) => {
     })
 }
 
-exports.test = (req, res) => {
-    res.send("Hello from test")
-    
-}
 
 exports.car_get_one = (req, res) => {
     db.model("Car").findOne({ _id:req.params.id }, (error, result) => {
