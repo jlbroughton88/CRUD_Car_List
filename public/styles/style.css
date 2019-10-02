@@ -178,6 +178,10 @@ a{
     .buttonsDiv{ flex-direction: row; margin-top: 5px;}
 }
 
+@media(max-width: 450px) {
+    .carList{ width: 310px; }
+}
+
 .newCarForm{
     display: flex;
     flex-direction: column;
@@ -264,19 +268,20 @@ a{
 }
 
 @media(max-width: 450px) {
-    .newCarInput{ margin: 1.5% }
-    .additionalInput{ margin: 1.5%; }
-    .pDiv{ margin-top: 5px; width: 360px; }
-    .homeP{ font-size: 1.1rem; }
-    .newCarForm{ flex-direction: column; height: 280px; margin-top: 1.5%;}
+    .container{ width: 100%};
+    .nav{ width: 360px; }
+    .newCarInput{ margin: 1%; height: 20px; font-size: 0.95rem;}
+    .additionalInput{ margin: 1.5%; height: 15px; }
+    .pDiv{ margin-top: 5px; width: 320px; }
+    .homeP{ font-size: 0.95rem; margin-bottom: 5px;}
+    .h3Div{ width: 100%; margin-top: 5px;}
+    .homeHead{ font-size: 2.25rem; margin-bottom: 15px; margin-top: 15px; }
+    .viewAllBtn{ margin-bottom:7px; margin-top: -10px; height: 35px;}
+    .newCarForm{ flex-direction: column; height: 200px; margin-top: 1.5%; width: 360px;}
     .yearBrandModel{ width: 70%; padding: 0; height: 50%; justify-content: space-around;}
     .hpTqMsrp{ width: 70%; padding: 0; height: 50%; justify-content: space-around;}
 }
 
-@media(max-width: 410px) {
-    .pDiv{  width: 330px; }
-    .homeP{ font-size: 1.1rem; }
-}
 
 .submitBtnDiv{
     height: 70px;
@@ -305,6 +310,11 @@ a{
     border: 2px solid purple;
     color: #e4e4e4;
     cursor: pointer;
+}
+
+@media(max-width: 450px) {
+    .submitBtnDiv{ width: 150px; }
+    .submitBtn{ height: 35px; }
 }
 
 #clickViewPrompt{
@@ -361,8 +371,12 @@ a{
     color: #e4e4e4;
 }
 
-@media(max-width: 550px){
-    .singleHead{
-        font-size:1.5rem;
-    }
+@media(max-width: 550px){ .singleHead{ font-size:1.5rem; }}
+
+@media(max-width: 450px) {
+    .singleHead{ font-size: 1.4rem; }
+    .tq{ font-size: 1.3rem }
+    .hp{ font-size: 1.3rem  }
+    .msrp{ font-size: 1.3rem  }
 }
+
