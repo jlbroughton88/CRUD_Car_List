@@ -58,6 +58,7 @@ html, body{
 
 a{
     text-decoration: none;
+    color: inherit;
 }
 
 
@@ -239,6 +240,7 @@ a{
 
 .submitBtn{
     font-size: 1.1rem;
+    background-color: #e4e4e4;
     color: #333;
     height: 40px !important;
     width: 80%;
