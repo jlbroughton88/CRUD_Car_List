@@ -5,7 +5,13 @@ html, body{
     padding: 0;
     margin: 0;
     background-color: #333;
+    font-family: "Museo Sans";
 }
+
+@font-face {
+    font-family:"Museo Sans";
+    src: url("./fonts/fonts/museoSans.ttf") format("TrueType");
+  }
 
 .container{
     height: 90%;
@@ -93,7 +99,7 @@ a{
 }
 
 .homeP{
-    font-size: 1.2rem;
+    font-size: 1.12rem;
     margin: 0;
     color: #e4e4e4;
 }
@@ -199,10 +205,10 @@ a{
 }
 
 @media(max-width: 600px) {
-    .homeHead{ font-size: 2.4rem; margin-bottom: 30px;}
+    .homeHead{ font-size: 2.6rem; margin-bottom: 30px;}
     .pDiv{ margin-bottom: 30px; }
     .homeH3{ font-size: 1.7rem;}
-    .homeP{ font-size: 1.15rem; }
+    .homeP{ font-size: 1.12rem; }
     .newCarForm{ flex-direction: row; }
     .yearBrandModel{ padding-top: 0; flex-direction: column; }
     .hpTqMsrp{ padding-bottom: 0; flex-direction: column; }
@@ -211,11 +217,11 @@ a{
 }
 
 @media(max-width: 500px) {
-    .homeHead{ font-size: 2.3rem; }
+    .homeHead{ margin-top: 45px; font-size: 2.45rem; }
     .pDiv{ margin-bottom: 30px; }
     .homeH3{ font-size: 1.65rem;}
-    .pDiv{ width:400px; }
-    .homeP{ font-size: 1.1rem; }
+    .pDiv{ width:420px; }
+    .homeP{ font-size: 1.05rem; }
     .yearBrandModel{ padding-right: 0; padding-left: 4%; }
     .hpTqMsrp{ padding-left: 0;  padding-right: 4%; }
     .newCarInput{ width: 75%; }
@@ -225,9 +231,16 @@ a{
 @media(max-width: 450px) {
     .newCarInput{ margin: 1.5% }
     .additionalInput{ margin: 1.5%; }
+    .pDiv{ margin-top: 5px; width: 360px; }
+    .homeP{ font-size: 1.1rem; }
     .newCarForm{ flex-direction: column; height: 280px; margin-top: 1.5%;}
     .yearBrandModel{ width: 70%; padding: 0; height: 50%; justify-content: space-around;}
     .hpTqMsrp{ width: 70%; padding: 0; height: 50%; justify-content: space-around;}
+}
+
+@media(max-width: 410px) {
+    .pDiv{  width: 330px; }
+    .homeP{ font-size: 1.1rem; }
 }
 
 .submitBtnDiv{
