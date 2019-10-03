@@ -331,6 +331,7 @@ a{
     border: none;
     outline: none;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 
@@ -339,6 +340,7 @@ a{
     border: none;
     outline: none;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 /* SINGLE */
