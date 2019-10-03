@@ -9,3 +9,4 @@ Technologies used:
     - Javascript
     - Express
     - NodeJS
+    - MongoDB
