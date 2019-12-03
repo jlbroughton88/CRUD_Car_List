@@ -1,3 +1,6 @@
+html {
+  height: 100%; }
+
 html, body {
   height: 100%;
   width: 100%;
@@ -7,17 +10,13 @@ html, body {
   background-color: #333;
   font-family: "Museo Sans"; }
 
+body {
+  display: flex;
+  flex-direction: column; }
+
 @font-face {
   font-family: "Museo Sans";
   src: url("./fonts/fonts/museoSans.ttf") format("TrueType"); }
-
-.container {
-  height: 90%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column; }
 
 hr {
   width: 70%;
@@ -40,186 +39,251 @@ a {
 .nav {
   display: flex;
   align-items: center;
+  position: fixed;
   width: 100%;
   height: 40px;
   color: #e4e4e4;
   background-color: purple;
   border-bottom: #e4e4e4 solid 2px; }
-  .nav a {
-    text-decoration: none;
-    color: inherit; }
-  .nav .homeNavDiv {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 20%;
-    height: 100%; }
-    .nav .homeNavDiv .homeNav {
-      font-size: 1.3rem;
-      color: #e4e4e4; }
-  .nav .navLinks {
-    display: flex;
-    width: 80%;
-    height: 100%;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 5%; }
-    .nav .navLinks .brandNav {
-      align-self: flex-end;
-      font-size: 1.3rem;
-      color: #e4e4e4; }
 
-.homeSection {
+.nav a {
+  text-decoration: none;
+  color: inherit; }
+
+.nav .homeNavDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 20%;
+  height: 100%; }
+
+.nav .homeNavDiv .homeNav {
+  font-size: 1.3rem;
+  color: #e4e4e4; }
+
+.nav .navLinks {
+  display: flex;
+  width: 80%;
+  height: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 5%; }
+
+.nav .navLinks .brandNav {
+  align-self: flex-end;
+  font-size: 1.3rem;
+  color: #e4e4e4; }
+
+.container {
+  margin-top: 75px;
+  width: 100%;
+  position: relative;
+  top: 65px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column; }
-  .homeSection .h3Div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 450px; }
-    .homeSection .h3Div .homeH3 {
-      font-size: 1.8rem;
-      margin: 0;
-      color: #e4e4e4; }
-  .homeSection .pDiv {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 450px;
-    margin-top: 7px;
-    margin-bottom: 40px;
-    text-align: center; }
-    .homeSection .pDiv .homeP {
-      font-size: 1.12rem;
-      margin: 0;
-      color: #e4e4e4; }
-  .homeSection .homeHead {
-    font-size: 2.9rem;
-    margin: 0;
-    margin-bottom: 40px;
-    color: #e4e4e4; }
-  .homeSection .newCarForm {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 15px;
-    justify-items: center;
-    align-self: center;
-    height: auto;
-    width: 450px;
-    margin-bottom: 15px; }
-    .homeSection .newCarForm input {
-      width: calc(90% - 6px);
-      height: calc(100% - 6px);
-      font-size: 1.15rem;
-      padding: 3px; }
-  .homeSection .viewAllBtn, .homeSection .submitBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    background-color: #e4e4e4;
-    color: #333;
-    font-size: 1.2rem;
-    border: 2px solid purple;
-    border-radius: 5px;
-    width: auto;
-    margin-bottom: 20px;
-    transition: all 0.15s ease-in-out; }
-    .homeSection .viewAllBtn:hover, .homeSection .submitBtn:hover {
-      background-color: #333;
-      color: #e4e4e4;
-      cursor: pointer; }
 
-.carList {
-  width: 400px;
+.container .homeSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 450px; }
+
+.container .homeSection .h3Div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
+
+.container .homeSection .h3Div .homeH3 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #e4e4e4; }
+
+.container .homeSection .pDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 450px;
+  margin-top: 7px;
+  margin-bottom: 40px;
+  text-align: center; }
+
+.container .homeSection .pDiv .homeP {
+  font-size: 1.12rem;
+  margin: 0;
+  color: #e4e4e4; }
+
+.container .homeSection .homeHead {
+  font-size: 2.9rem;
+  margin: 0;
+  margin-bottom: 40px;
+  color: #e4e4e4; }
+
+.container .homeSection .newCarForm {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 15px;
+  justify-items: center;
+  align-self: center;
+  height: 135px;
+  width: 80%;
+  margin-bottom: 20px; }
+
+.container .homeSection .newCarForm input {
+  width: calc(90% - 6px);
+  height: calc(100% - 6px);
+  font-size: 1.10rem;
+  padding: 3px;
+  padding-left: 10px; }
+
+.container .homeSection .viewAllBtn, .container .homeSection .submitBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #e4e4e4;
+  color: #333;
+  font-size: 1.2rem;
+  border: 2px solid purple;
+  border-radius: 5px;
+  width: auto;
+  margin-bottom: 20px;
+  padding: 3px 6px;
+  transition: all 0.15s ease-in-out; }
+
+.container .homeSection .viewAllBtn:hover, .container .homeSection .submitBtn:hover {
+  background-color: #333;
+  color: #e4e4e4;
+  cursor: pointer; }
+
+.container .carList {
   max-height: 400px;
-  padding: 0; }
-  .carList .carListItem {
-    width: 100%;
-    margin: 5%;
-    margin-left: 0;
-    margin-right: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    border: 1px solid #e4e4e4;
-    padding: 5%;
-    padding-top: 2.5%;
-    padding-bottom: 2.5%;
-    color: #e4e4e4;
-    font-size: 1.1rem;
-    border-radius: 5px; }
-    .carList .carListItem .buttonsDiv {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-      width: 100px; }
-      .carList .carListItem .buttonsDiv .deleteBtn {
-        background-color: red;
-        border: none;
-        outline: none;
-        font-size: 1rem;
-        cursor: pointer; }
-      .carList .carListItem .buttonsDiv .viewBtn {
-        background-color: #e4e4e4;
-        border: none;
-        outline: none;
-        font-size: 1rem;
-        cursor: pointer; }
-  @media (max-width: 550px) {
-    .carList {
-      width: 350px; }
-      .carList .carListItem {
-        flex-direction: column; }
-      .carList .buttonsDiv {
-        flex-direction: row;
-        margin-top: 5px; } }
-  @media (max-width: 450px) {
-    .carList {
-      width: 310px; } }
+  width: auto;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; }
 
-.singleDiv {
+.container .carList .carListItem {
+  width: 100%;
+  margin: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  border: 1px solid #e4e4e4;
+  padding: 5%;
+  color: #e4e4e4;
+  font-size: 1.1rem;
+  border-radius: 5px; }
+
+.container .carList .carListItem .buttonsDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100px; }
+
+.container .carList .carListItem .buttonsDiv .deleteBtn {
+  background-color: red;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  cursor: pointer; }
+
+.container .carList .carListItem .buttonsDiv .viewBtn {
+  background-color: #e4e4e4;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  cursor: pointer; }
+
+@media (max-width: 550px) {
+  .container .carList {
+    width: 350px; }
+  .container .carList .carListItem {
+    flex-direction: column; }
+  .container .carList .buttonsDiv {
+    flex-direction: row;
+    margin-top: 5px; } }
+
+@media (max-width: 450px) {
+  .container .carList {
+    width: 310px; } }
+
+.container .singleDiv {
   color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column; }
-  .singleDiv .singleHead {
-    font-size: 2.0rem;
-    margin: 0;
-    margin-bottom: 10px;
-    color: #e4e4e4;
-    font-weight: bolder; }
-  .singleDiv .hp {
-    margin: 0;
-    margin-bottom: 25px;
-    font-size: 1.5rem;
-    color: #e4e4e4; }
-  .singleDiv .tq {
-    font-size: 1.5rem;
-    margin: 0;
-    margin-bottom: 25px;
-    color: #e4e4e4; }
-  .singleDiv .msrp {
-    margin: 0;
-    margin-bottom: 25px;
-    font-size: 1.5rem;
-    color: #e4e4e4; }
-  @media (max-width: 550px) {
-    .singleDiv .singleHead {
-      font-size: 1.5rem; } }
-  @media (max-width: 450px) {
-    .singleDiv .singleHead {
-      font-size: 1.4rem; }
-    .singleDiv .tq {
-      font-size: 1.3rem; }
-    .singleDiv .hp {
-      font-size: 1.3rem; }
-    .singleDiv .msrp {
-      font-size: 1.3rem; } }
+
+.container .singleDiv .singleHead {
+  font-size: 2.0rem;
+  margin: 0;
+  margin-bottom: 10px;
+  color: #e4e4e4;
+  font-weight: bolder; }
+
+.container .singleDiv .hp {
+  margin: 0;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  color: #e4e4e4; }
+
+.container .singleDiv .tq {
+  font-size: 1.5rem;
+  margin: 0;
+  margin-bottom: 25px;
+  color: #e4e4e4; }
+
+.container .singleDiv .msrp {
+  margin: 0;
+  margin-bottom: 25px;
+  font-size: 1.5rem;
+  color: #e4e4e4; }
+
+@media (max-width: 550px) {
+  .container .singleDiv .singleHead {
+    font-size: 1.5rem; } }
+
+@media (max-width: 450px) {
+  .container .singleDiv .singleHead {
+    font-size: 1.4rem; }
+  .container .singleDiv .tq {
+    font-size: 1.3rem; }
+  .container .singleDiv .hp {
+    font-size: 1.3rem; }
+  .container .singleDiv .msrp {
+    font-size: 1.3rem; } }
+
+@media (max-width: 501px) {
+  .container .homeSection .homeHead {
+    font-size: 2.6rem; }
+  .container .homeSection .h3Div .homeH3 {
+    font-size: 1.6rem; }
+  .container .homeSection .pDiv {
+    width: 80%; }
+  .container .homeSection .pDiv .homeP {
+    font-size: 1.065rem; }
+  .container .homeSection .newCarForm {
+    width: 90%;
+    height: 125px; }
+  .container .homeSection .newCarForm .input {
+    font-size: 1.1rem; } }
+
+@media (max-width: 400px) {
+  .container .homeSection .homeHead {
+    font-size: 2.3rem; }
+  .container .homeSection .h3Div .homeH3 {
+    font-size: 1.5rem; }
+  .container .homeSection .pDiv .homeP {
+    font-size: 1.03rem; } }

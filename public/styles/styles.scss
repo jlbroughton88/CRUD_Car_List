@@ -1,4 +1,7 @@
 
+html{
+    height: 100%;
+}
 html, body{
     height: 100%;
     width: 100%;
@@ -7,6 +10,11 @@ html, body{
     margin: 0;
     background-color: #333;
     font-family: "Museo Sans";
+}
+
+body{
+    display: flex;
+    flex-direction: column;
 }
 
 @mixin flex-center{
@@ -21,11 +29,7 @@ html, body{
     src: url("./fonts/fonts/museoSans.ttf") format("TrueType");
   }
 
-.container{
-    height: 90%;
-    width: 100%;
-    @include flex-center();
-}
+
 
 hr{
     width: 70%;
@@ -51,6 +55,7 @@ a{
 .nav{
     display: flex;
     align-items: center;
+    position: fixed;
     width: 100%;
     height: 40px;
     color: #e4e4e4;
@@ -89,119 +94,100 @@ a{
     }
 }
 
-.homeSection{
+.container{
+    margin-top: 75px;
+    width: 100%;
+    position: relative;
+    top: 65px;
     @include flex-center();
-
-    .h3Div{
+    
+    .homeSection{
         @include flex-center();
-        width: 450px;
+        min-height: 450px;
 
-        .homeH3{
-            font-size: 1.8rem;
+        .h3Div{
+            @include flex-center();
+
+            .homeH3{
+                font-size: 1.8rem;
+                margin: 0;
+                color: #e4e4e4;
+            }
+        }
+
+        .pDiv{
+            @include flex-center();
+            width: 450px;
+            margin-top: 7px;
+            margin-bottom: 40px;
+            text-align: center;    
+            
+            .homeP{
+                font-size: 1.12rem;
+                margin: 0;
+                color: #e4e4e4;
+            }
+        }
+
+        .homeHead{
+            font-size: 2.9rem;
             margin: 0;
+            margin-bottom: 40px;
             color: #e4e4e4;
         }
-    }
 
-    .pDiv{
-        @include flex-center();
-        width: 450px;
-        margin-top: 7px;
-        margin-bottom: 40px;
-        text-align: center;    
+        .newCarForm{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 15px;
+            justify-items: center;
+            align-self: center;
+            height: 135px;
+            width: 80%;
+            margin-bottom: 20px;
         
-        .homeP{
-            font-size: 1.12rem;
-            margin: 0;
-            color: #e4e4e4;
+            input{
+                width: calc(90% - 6px);
+                height: calc(100% - 6px);
+                font-size: 1.10rem;
+                padding: 3px;
+                padding-left: 10px;
+            }
+
+
+
+        }
+
+        .viewAllBtn, .submitBtn{
+            @include flex-center();
+            background-color: #e4e4e4;
+            color: #333;
+            font-size: 1.2rem;
+            border: 2px solid purple;
+            border-radius: 5px;
+            width: auto;
+            margin-bottom: 20px;
+            padding: 3px 6px;
+            transition: all 0.15s ease-in-out;
+            
+            &:hover{
+                background-color: #333;
+                color: #e4e4e4;
+                cursor: pointer;
+            }
         }
     }
-
-    .homeHead{
-        font-size: 2.9rem;
-        margin: 0;
-        margin-bottom: 40px;
-        color: #e4e4e4;
-    }
-
-    .newCarForm{
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 15px;
-        justify-items: center;
-        align-self: center;
-        height: auto;
-        width: 450px;
-        margin-bottom: 15px;
     
-        input{
-            width: calc(90% - 6px);
-            height: calc(100% - 6px);
-            font-size: 1.15rem;
-            padding: 3px;
-        }
-    
-        // .submitBtnDiv{
-        //     height: 70px;
-        //     width: 200px;
-        //     border-radius: 5px;
-        //     @include flex-center();
-    
-        //     .submitBtn{
-        //         font-size: 1.1rem;
-        //         background-color: #e4e4e4;
-        //         color: #333;
-        //         height: 40px;
-        //         width: 80%;
-        //         padding: 3%;
-        //         transition: all .15s ease-out;
-        //         outline: none;
-        //         border-radius: 2px;
-        //         border: 2px solid purple;
-        //         font-family: "Museo Sans";
-    
-        //         &:hover{
-        //             background-color: #333;
-        //             border: 2px solid purple;
-        //             color: #e4e4e4;
-        //             cursor: pointer;
-        //         }
-        //     }
-    
-        //     @media(max-width: 450px) {
-        //         width: 150px;
-        //         .submitBtn{ height: 35px; }
-        //     }
-        // }
-    }
-
-    .viewAllBtn, .submitBtn{
-        @include flex-center();
-        background-color: #e4e4e4;
-        color: #333;
-        font-size: 1.2rem;
-        border: 2px solid purple;
-        border-radius: 5px;
-        width: auto;
-        margin-bottom: 20px;
-        transition: all 0.15s ease-in-out;
-        
-        &:hover{
-            background-color: #333;
-            color: #e4e4e4;
-            cursor: pointer;
-        }
-    }
-}
-
-.carList{
-    width: 400px;
+    .carList{
     max-height: 400px;
+    width: auto;
     padding: 0;
+    box-sizing: border-box;
+    @include flex-center();
 
     .carListItem{
         width: 100%;
-        margin: 5%;
+        margin: 10px;
         margin-left: 0;
         margin-right: 0;
         display: flex;
@@ -210,8 +196,6 @@ a{
         align-items: center;
         border: 1px solid #e4e4e4;
         padding: 5%;
-        padding-top: 2.5%;
-        padding-bottom: 2.5%;
         color: #e4e4e4;
         font-size: 1.1rem;
         border-radius: 5px;
@@ -249,54 +233,110 @@ a{
     @media(max-width: 450px) {
         width: 310px;
     }
-}
-
-.singleDiv{
-    color: #ffffff;
-    @include flex-center();
-
-    .singleHead{
-        font-size: 2.0rem;
-        margin: 0;
-        margin-bottom: 10px;
-        color: #e4e4e4;
-        font-weight: bolder;
     }
 
-    .hp{
-        margin: 0;
-        margin-bottom: 25px;
-        font-size: 1.5rem;
-        color: #e4e4e4;
-    }
+    .singleDiv{
+        color: #ffffff;
+        @include flex-center();
 
-    .tq{
-        font-size: 1.5rem;
-        margin: 0;
-        margin-bottom: 25px;
-        color: #e4e4e4;
-    }
+        .singleHead{
+            font-size: 2.0rem;
+            margin: 0;
+            margin-bottom: 10px;
+            color: #e4e4e4;
+            font-weight: bolder;
+        }
 
-    .msrp{
-        margin: 0;
-        margin-bottom: 25px;
-        font-size: 1.5rem;
-        color: #e4e4e4;
-    }
+        .hp{
+            margin: 0;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            color: #e4e4e4;
+        }
+
+        .tq{
+            font-size: 1.5rem;
+            margin: 0;
+            margin-bottom: 25px;
+            color: #e4e4e4;
+        }
+
+        .msrp{
+            margin: 0;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            color: #e4e4e4;
+        }
+        
+        @media(max-width: 550px){ 
+            .singleHead{ 
+                font-size:1.5rem; 
+            }
+        }
+
+        @media(max-width: 450px) {
+            .singleHead{ font-size: 1.4rem; }
+            .tq{ font-size: 1.3rem }
+            .hp{ font-size: 1.3rem  }
+            .msrp{ font-size: 1.3rem  }
+        }
+    }            
     
-    @media(max-width: 550px){ 
-        .singleHead{ 
-            font-size:1.5rem; 
+    @media(max-width: 501px) {
+        .homeSection{
+            .homeHead{
+                font-size: 2.6rem;
+            }
+
+            .h3Div{
+                .homeH3{
+                    font-size: 1.6rem;
+                }
+            }
+
+            .pDiv{
+                width: 80%;
+                
+                .homeP{
+                    font-size: 1.065rem;
+                }
+            }
+
+            .newCarForm{
+                width: 90%;
+                height: 125px;
+
+                .input{
+                    font-size: 1.1rem;
+                }
+            }
         }
     }
 
-    @media(max-width: 450px) {
-        .singleHead{ font-size: 1.4rem; }
-        .tq{ font-size: 1.3rem }
-        .hp{ font-size: 1.3rem  }
-        .msrp{ font-size: 1.3rem  }
+    @media(max-width: 400px) {
+        .homeSection{
+            .homeHead{
+                font-size: 2.3rem;
+            }
+
+            .h3Div{
+                .homeH3{
+                    font-size: 1.5rem;
+                }
+            }
+
+            .pDiv{
+                .homeP{
+                    font-size: 1.03rem;
+                }
+            }
+        }
     }
 }
+
+
+
+
 
 
 
