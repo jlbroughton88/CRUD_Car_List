@@ -1,3 +1,4 @@
+
 html, body{
     height: 100%;
     width: 100%;
@@ -8,6 +9,13 @@ html, body{
     font-family: "Museo Sans";
 }
 
+@mixin flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 @font-face {
     font-family:"Museo Sans";
     src: url("./fonts/fonts/museoSans.ttf") format("TrueType");
@@ -16,11 +24,7 @@ html, body{
 .container{
     height: 90%;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    
+    @include flex-center();
 }
 
 hr{
@@ -35,7 +39,10 @@ hr{
 
 input{
     -webkit-appearance: none;
+    border: none;
+    border-radius: 5px;
 }
+
 
 .nav{
     display: flex;
@@ -48,9 +55,7 @@ input{
 }
 
 .homeNavDiv{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center();
     width: 20%;
     height: 100%;
 }
@@ -84,16 +89,12 @@ a{
 
 
 .h3Div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center();
     width: 450px;
 }
 
 .pDiv{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center();
     width: 450px;
     margin-top: 7px;
     margin-bottom: 40px;
@@ -120,14 +121,12 @@ a{
 }
 
 .viewAllBtn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center();
     background-color: #e4e4e4;
     color: #333;
     font-size: 1.2rem;
     border: 2px solid purple;
-    border-radius: 2px;
+    border-radius: 5px;
     height: 40px;;
     width: 100px;
     margin-bottom: 20px;
@@ -143,13 +142,13 @@ a{
 .carList{
     width: 400px;
     max-height: 400px;
-    overflow: scroll;
     padding: 0;
 }
 
 
 
 .carListItem{
+    width: 100%;
     margin: 5%;
     margin-left: 0;
     margin-right: 0;
@@ -163,6 +162,7 @@ a{
     padding-bottom: 2.5%;
     color: #e4e4e4;
     font-size: 1.1rem;
+    border-radius: 5px;
 }
 
 .buttonsDiv{
@@ -286,9 +286,8 @@ a{
 .submitBtnDiv{
     height: 70px;
     width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    border-radius: 5px;
+    @include flex-center();
 }
 
 .submitBtn{
@@ -318,9 +317,7 @@ a{
 }
 
 #clickViewPrompt{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flex-center();
     width: 50%;
 }
 
