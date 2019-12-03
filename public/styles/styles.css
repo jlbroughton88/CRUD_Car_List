@@ -44,7 +44,8 @@ a {
   height: 40px;
   color: #e4e4e4;
   background-color: purple;
-  border-bottom: #e4e4e4 solid 2px; }
+  border-bottom: #e4e4e4 solid 2px;
+  z-index: 2; }
 
 .nav a {
   text-decoration: none;
@@ -76,10 +77,9 @@ a {
   color: #e4e4e4; }
 
 .container {
-  margin-top: 75px;
   width: 100%;
   position: relative;
-  top: 65px;
+  top: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -162,17 +162,19 @@ a {
   cursor: pointer; }
 
 .container .carList {
-  max-height: 400px;
+  height: 100%;
   width: auto;
   padding: 0;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; }
+  flex-direction: column;
+  z-index: 1; }
 
 .container .carList .carListItem {
   width: 100%;
+  height: auto;
   margin: 10px;
   margin-left: 0;
   margin-right: 0;
@@ -181,7 +183,7 @@ a {
   justify-content: space-evenly;
   align-items: center;
   border: 1px solid #e4e4e4;
-  padding: 5%;
+  padding: 2.5%;
   color: #e4e4e4;
   font-size: 1.1rem;
   border-radius: 5px; }
@@ -207,17 +209,11 @@ a {
   cursor: pointer; }
 
 @media (max-width: 550px) {
-  .container .carList {
-    width: 350px; }
   .container .carList .carListItem {
     flex-direction: column; }
   .container .carList .buttonsDiv {
     flex-direction: row;
     margin-top: 5px; } }
-
-@media (max-width: 450px) {
-  .container .carList {
-    width: 310px; } }
 
 .container .singleDiv {
   color: #ffffff;
@@ -275,7 +271,7 @@ a {
   .container .homeSection .pDiv .homeP {
     font-size: 1.065rem; }
   .container .homeSection .newCarForm {
-    width: 90%;
+    width: 85%;
     height: 125px; }
   .container .homeSection .newCarForm .input {
     font-size: 1.1rem; } }
@@ -286,4 +282,7 @@ a {
   .container .homeSection .h3Div .homeH3 {
     font-size: 1.5rem; }
   .container .homeSection .pDiv .homeP {
-    font-size: 1.03rem; } }
+    font-size: 1.03rem; }
+  .container .carList .carListItem {
+    margin: 5px 0;
+    padding: 5px; } }
