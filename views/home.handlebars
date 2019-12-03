@@ -4,25 +4,27 @@
     </div>
 </nav>
 <div class="container">
-    <h1 class="homeHead">{{title}}</h1>
-    <div class="h3Div"><h3 class="homeH3">What is this?</h3></div>
-    <div class="pDiv"><p class="homeP">A completely useless app that showcases my skills with MVC and working with a database! Explore around!</p></div>
-    <div class="viewAllBtn" ><a href="/all">View All!</a></div>
-    <form id="form" name="form" class="newCarForm" action="/add" method="POST">
-        <div class="yearBrandModel">
+    <section class="homeSection">
+        <h1 class="homeHead">{{title}}</h1>
+        <div class="h3Div">
+            <h3 class="homeH3">What is this?</h3>
+        </div>
+        <div class="pDiv">
+            <p class="homeP">A completely useless app that showcases my skills with MVC and working with a database!
+                Explore around!</p>
+        </div>
+        <button class="viewAllBtn">
+            <a href="/all">View All!</a>
+        </button>
+        <form id="form" name="form" class="newCarForm" action="/add" method="POST">
             <input class="newCarInput" name="year" placeholder="Year" type="text" autocomplete="off">
             <input class="newCarInput" name="brand" placeholder="Brand" type="text" autocomplete="off">
             <input class="newCarInput" name="model" placeholder="Model" type="text" autocomplete="off">
-        </div>
-        <div class="hpTqMsrp">
             <input class="additionalInput" name="hp" placeholder="HP" type="text" autocomplete="off">
             <input class="additionalInput" name="tq" placeholder="Lbs*tq" type="text" autocomplete="off">
             <input class="additionalInput" name="msrp" placeholder="MSRP" type="text" autocomplete="off">
-        </div>
-    </form>
-    <div class="submitBtnDiv">
+        </form>
         <button form="form" id="submitBtn" class="submitBtn" type="submit">Add To List</button>
-    </div>
-    {{!-- <div id="clickViewPrompt"></div> --}}
-    
+    </section>
+
 </div>

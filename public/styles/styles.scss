@@ -43,6 +43,10 @@ input{
     border-radius: 5px;
 }
 
+a{
+    text-decoration: none;
+    color: inherit;
+}
 
 .nav{
     display: flex;
@@ -52,330 +56,247 @@ input{
     color: #e4e4e4;
     background-color: purple;
     border-bottom: #e4e4e4 solid 2px;
+
+    a{
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .homeNavDiv{
+        @include flex-center();
+        width: 20%;
+        height: 100%;        
+        
+        .homeNav{
+            font-size: 1.3rem;
+            color: #e4e4e4;
+        }
+    }
+
+     .navLinks{
+        display: flex;
+        width: 80%;
+        height: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        padding-right: 5%;
+
+        .brandNav{
+            align-self: flex-end;
+            font-size: 1.3rem;
+            color: #e4e4e4;
+        }
+    }
 }
 
-.homeNavDiv{
+.homeSection{
     @include flex-center();
-    width: 20%;
-    height: 100%;
-}
 
-.navLinks{
-    display: flex;
-    width: 80%;
-    height: 100%;
-    justify-content: flex-end;
-    align-items: center;
-    padding-right: 5%;
-}
+    .h3Div{
+        @include flex-center();
+        width: 450px;
 
-.homeNav{
-    font-size: 1.3rem;
-    color: #e4e4e4;
-}
+        .homeH3{
+            font-size: 1.8rem;
+            margin: 0;
+            color: #e4e4e4;
+        }
+    }
 
-.brandNav{
-    align-self: flex-end;
-    font-size: 1.3rem;
-    color: #e4e4e4;
-}
+    .pDiv{
+        @include flex-center();
+        width: 450px;
+        margin-top: 7px;
+        margin-bottom: 40px;
+        text-align: center;    
+        
+        .homeP{
+            font-size: 1.12rem;
+            margin: 0;
+            color: #e4e4e4;
+        }
+    }
 
+    .homeHead{
+        font-size: 2.9rem;
+        margin: 0;
+        margin-bottom: 40px;
+        color: #e4e4e4;
+    }
 
-a{
-    text-decoration: none;
-    color: inherit;
-}
+    .newCarForm{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 15px;
+        justify-items: center;
+        align-self: center;
+        height: auto;
+        width: 450px;
+        margin-bottom: 15px;
+    
+        input{
+            width: calc(90% - 6px);
+            height: calc(100% - 6px);
+            font-size: 1.15rem;
+            padding: 3px;
+        }
+    
+        // .submitBtnDiv{
+        //     height: 70px;
+        //     width: 200px;
+        //     border-radius: 5px;
+        //     @include flex-center();
+    
+        //     .submitBtn{
+        //         font-size: 1.1rem;
+        //         background-color: #e4e4e4;
+        //         color: #333;
+        //         height: 40px;
+        //         width: 80%;
+        //         padding: 3%;
+        //         transition: all .15s ease-out;
+        //         outline: none;
+        //         border-radius: 2px;
+        //         border: 2px solid purple;
+        //         font-family: "Museo Sans";
+    
+        //         &:hover{
+        //             background-color: #333;
+        //             border: 2px solid purple;
+        //             color: #e4e4e4;
+        //             cursor: pointer;
+        //         }
+        //     }
+    
+        //     @media(max-width: 450px) {
+        //         width: 150px;
+        //         .submitBtn{ height: 35px; }
+        //     }
+        // }
+    }
 
-
-
-.h3Div{
-    @include flex-center();
-    width: 450px;
-}
-
-.pDiv{
-    @include flex-center();
-    width: 450px;
-    margin-top: 7px;
-    margin-bottom: 40px;
-    text-align: center;
-}
-
-.homeHead{
-    font-size: 2.9rem;
-    margin: 0;
-    margin-bottom: 40px;
-    color: #e4e4e4;
-}
-
-.homeH3{
-    font-size: 1.8rem;
-    margin: 0;
-    color: #e4e4e4;
-}
-
-.homeP{
-    font-size: 1.12rem;
-    margin: 0;
-    color: #e4e4e4;
-}
-
-.viewAllBtn{
-    @include flex-center();
-    background-color: #e4e4e4;
-    color: #333;
-    font-size: 1.2rem;
-    border: 2px solid purple;
-    border-radius: 5px;
-    height: 40px;;
-    width: 100px;
-    margin-bottom: 20px;
-    transition: all 0.15s ease-in-out;
-}
-
-.viewAllBtn:hover{
-    background-color: #333;
-    color: #e4e4e4;
-    cursor: pointer;
+    .viewAllBtn, .submitBtn{
+        @include flex-center();
+        background-color: #e4e4e4;
+        color: #333;
+        font-size: 1.2rem;
+        border: 2px solid purple;
+        border-radius: 5px;
+        width: auto;
+        margin-bottom: 20px;
+        transition: all 0.15s ease-in-out;
+        
+        &:hover{
+            background-color: #333;
+            color: #e4e4e4;
+            cursor: pointer;
+        }
+    }
 }
 
 .carList{
     width: 400px;
     max-height: 400px;
     padding: 0;
+
+    .carListItem{
+        width: 100%;
+        margin: 5%;
+        margin-left: 0;
+        margin-right: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        border: 1px solid #e4e4e4;
+        padding: 5%;
+        padding-top: 2.5%;
+        padding-bottom: 2.5%;
+        color: #e4e4e4;
+        font-size: 1.1rem;
+        border-radius: 5px;
+        
+        .buttonsDiv{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100px;
+        
+            .deleteBtn{
+                background-color: red;
+                border: none;
+                outline: none;
+                font-size: 1rem;
+                cursor: pointer;
+            }
+        
+            .viewBtn{
+                background-color: #e4e4e4;
+                border: none;
+                outline: none;
+                font-size: 1rem;
+                cursor: pointer;
+            }
+        }
+    }
+
+    @media(max-width: 550px) {
+        width: 350px;
+        .carListItem{ flex-direction: column; }
+        .buttonsDiv{ flex-direction: row; margin-top: 5px;}
+    }
+
+    @media(max-width: 450px) {
+        width: 310px;
+    }
 }
 
-
-
-.carListItem{
-    width: 100%;
-    margin: 5%;
-    margin-left: 0;
-    margin-right: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    border: 1px solid #e4e4e4;
-    padding: 5%;
-    padding-top: 2.5%;
-    padding-bottom: 2.5%;
-    color: #e4e4e4;
-    font-size: 1.1rem;
-    border-radius: 5px;
-}
-
-.buttonsDiv{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100px;
-}
-
-@media(max-width: 550px) {
-    .carList{ width: 350px; }
-    .carListItem{ flex-direction: column; }
-    .buttonsDiv{ flex-direction: row; margin-top: 5px;}
-}
-
-@media(max-width: 450px) {
-    .carList{ width: 310px; }
-}
-
-.newCarForm{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 150px;
-    width: 450px;
-   
-}
-
-.newCarInput{
-    width: 23%;
-    padding: 3%;
-    padding-top: 1.5%;
-    padding-bottom: 1.5%;
-    font-size: 1.00rem;
-    outline: none;
-    align-self: center;
-    border-radius: 2px;
-    text-align: center;
-}
-
-.additionalInput{
-    display: table;
-    vertical-align: center;
-    width: 23%;
-    padding: 3%;
-    padding-top: 1.5%;
-    padding-bottom: 1.5%;
-    font-size: 1.00rem;
-    outline: none;
-    align-self: center;
-    border-radius: 2px;
-    text-align: center;
-}
-
-.yearBrandModel{
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    width: 100%;
-    padding: 2%;
-    font-size: 1.0rem;
-    outline: none;
-    align-self: center;
-    padding-bottom: 0;
-}
-
-
-.hpTqMsrp{
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    width: 100%;
-    padding: 2%;
-    padding-top: 0;
-    font-size: 1.0rem;
-    outline: none;
-    align-self: center;
-}
-
-@media(max-width: 600px) {
-    .homeHead{ font-size: 2.6rem; margin-bottom: 30px;}
-    .pDiv{ margin-bottom: 30px; }
-    .homeH3{ font-size: 1.7rem;}
-    .homeP{ font-size: 1.12rem; }
-    .newCarForm{ flex-direction: row; }
-    .yearBrandModel{ padding-top: 0; flex-direction: column; }
-    .hpTqMsrp{ padding-bottom: 0; flex-direction: column; }
-    .newCarInput{ margin: 3%; margin-left: 0; margin-right: 0; width: 80%;}
-    .additionalInput{  margin: 3%; margin-left: 0; margin-right: 0; width: 80%;}
-}
-
-@media(max-width: 500px) {
-    .homeHead{ margin-top: 45px; font-size: 2.45rem; }
-    .pDiv{ margin-bottom: 30px; }
-    .homeH3{ font-size: 1.65rem;}
-    .pDiv{ width:420px; }
-    .homeP{ font-size: 1.05rem; }
-    .yearBrandModel{ padding-right: 0; padding-left: 4%; }
-    .hpTqMsrp{ padding-left: 0;  padding-right: 4%; }
-    .newCarInput{ width: 75%; }
-    .additionalInput{ width: 75%; }
-}
-
-@media(max-width: 450px) {
-    .container{ width: 100%};
-    .nav{ width: 360px; }
-    .newCarInput{ margin: 1%; height: 20px; font-size: 0.95rem;}
-    .additionalInput{ margin: 1.5%; height: 15px; }
-    .pDiv{ margin-top: 5px; width: 320px; }
-    .homeP{ font-size: 0.95rem; margin-bottom: 5px;}
-    .h3Div{ width: 100%; margin-top: 5px;}
-    .homeHead{ font-size: 2.25rem; margin-bottom: 15px; margin-top: 15px; }
-    .viewAllBtn{ margin-bottom:7px; margin-top: -10px; height: 35px;}
-    .newCarForm{ flex-direction: column; height: 200px; margin-top: 1.5%; width: 360px;}
-    .yearBrandModel{ width: 70%; padding: 0; height: 50%; justify-content: space-around;}
-    .hpTqMsrp{ width: 70%; padding: 0; height: 50%; justify-content: space-around;}
-}
-
-
-.submitBtnDiv{
-    height: 70px;
-    width: 200px;
-    border-radius: 5px;
+.singleDiv{
+    color: #ffffff;
     @include flex-center();
+
+    .singleHead{
+        font-size: 2.0rem;
+        margin: 0;
+        margin-bottom: 10px;
+        color: #e4e4e4;
+        font-weight: bolder;
+    }
+
+    .hp{
+        margin: 0;
+        margin-bottom: 25px;
+        font-size: 1.5rem;
+        color: #e4e4e4;
+    }
+
+    .tq{
+        font-size: 1.5rem;
+        margin: 0;
+        margin-bottom: 25px;
+        color: #e4e4e4;
+    }
+
+    .msrp{
+        margin: 0;
+        margin-bottom: 25px;
+        font-size: 1.5rem;
+        color: #e4e4e4;
+    }
+    
+    @media(max-width: 550px){ 
+        .singleHead{ 
+            font-size:1.5rem; 
+        }
+    }
+
+    @media(max-width: 450px) {
+        .singleHead{ font-size: 1.4rem; }
+        .tq{ font-size: 1.3rem }
+        .hp{ font-size: 1.3rem  }
+        .msrp{ font-size: 1.3rem  }
+    }
 }
 
-.submitBtn{
-    font-size: 1.1rem;
-    background-color: #e4e4e4;
-    color: #333;
-    height: 40px;
-    width: 80%;
-    padding: 3%;
-    transition: all .15s ease-out;
-    outline: none;
-    border-radius: 2px;
-    border: 2px solid purple;
-    font-family: "Museo Sans";
-}
 
-.submitBtn:hover{
-    background-color: #333;
-    border: 2px solid purple;
-    color: #e4e4e4;
-    cursor: pointer;
-}
-
-@media(max-width: 450px) {
-    .submitBtnDiv{ width: 150px; }
-    .submitBtn{ height: 35px; }
-}
-
-#clickViewPrompt{
-    @include flex-center();
-    width: 50%;
-}
-
-
-
-.deleteBtn{
-    background-color: red;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-
-.viewBtn{
-    background-color: #e4e4e4;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-    cursor: pointer;
-}
-
-/* SINGLE */
-.singleHead{
-    font-size: 2.0rem;
-    margin: 0;
-    margin-bottom: 10px;
-    color: #e4e4e4;
-    font-weight: bolder;
-}
-
-.hp{
-    margin: 0;
-    margin-bottom: 25px;
-    font-size: 1.5rem;
-    color: #e4e4e4;
-}
-
-.tq{
-    font-size: 1.5rem;
-    margin: 0;
-    margin-bottom: 25px;
-    color: #e4e4e4;
-}
-
-.msrp{
-    margin: 0;
-    margin-bottom: 25px;
-    font-size: 1.5rem;
-    color: #e4e4e4;
-}
-
-@media(max-width: 550px){ .singleHead{ font-size:1.5rem; }}
-
-@media(max-width: 450px) {
-    .singleHead{ font-size: 1.4rem; }
-    .tq{ font-size: 1.3rem }
-    .hp{ font-size: 1.3rem  }
-    .msrp{ font-size: 1.3rem  }
-}
 
